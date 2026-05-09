@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "WMT Hostel Mobile",
+    "slug": "wmt-hostel-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "jsEngine": "hermes"
+  }
+}
