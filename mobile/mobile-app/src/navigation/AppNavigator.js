@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import RoomListScreen from "../screens/RoomListScreen";
+import ComplaintsScreen from "../screens/ComplaintsScreen";
 import { THEME } from "../theme/theme";
 
 const Stack = createNativeStackNavigator();
@@ -29,9 +30,14 @@ export default function AppNavigator({ auth, setAuth }) {
             </Stack.Screen>
           </>
         ) : (
-          <Stack.Screen name="Rooms">
-            {(props) => <RoomListScreen {...props} auth={auth} setAuth={setAuth} />}
-          </Stack.Screen>
+          <>
+            <Stack.Screen name="Rooms">
+              {(props) => <RoomListScreen {...props} auth={auth} setAuth={setAuth} />}
+            </Stack.Screen>
+            <Stack.Screen name="Complaints" options={{ title: "Room Complaints" }}>
+              {(props) => <ComplaintsScreen {...props} auth={auth} />}
+            </Stack.Screen>
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

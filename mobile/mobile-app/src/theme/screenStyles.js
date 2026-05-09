@@ -335,5 +335,333 @@ export const styles = StyleSheet.create({
   },
   loading: {
     marginTop: 48
+  },
+  modalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 16,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e2e8f0"
+  },
+  closeButton: {
+    fontSize: 28,
+    color: "#64748b",
+    fontWeight: "600"
+  },
+  calendarContainer: {
+    marginBottom: 20,
+    borderRadius: 16,
+    overflow: "hidden",
+    backgroundColor: "#fff"
+  },
+  dateDisplayContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    backgroundColor: "#f1f5f9",
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 16
+  },
+  dateDisplay: {
+    flex: 1,
+    alignItems: "center"
+  },
+  dateLabel: {
+    fontSize: 12,
+    color: "#64748b",
+    marginBottom: 6,
+    fontWeight: "600",
+    textTransform: "uppercase"
+  },
+  dateValue: {
+    fontSize: 16,
+    color: "#4f46e5",
+    fontWeight: "700"
+  },
+  stepIndicator: {
+    textAlign: "center",
+    fontSize: 13,
+    color: "#64748b",
+    marginBottom: 16,
+    fontWeight: "500"
+  },
+  modalActions: {
+    flexDirection: "row",
+    gap: 12,
+    marginTop: 16
+  },
+  buttonReset: {
+    flex: 1,
+    paddingVertical: 12,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#e2e8f0",
+    alignItems: "center"
+  },
+  buttonResetText: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "#64748b"
+  },
+  buttonConfirm: {
+    flex: 1,
+    paddingVertical: 12,
+    borderRadius: 12,
+    backgroundColor: "#4f46e5",
+    alignItems: "center"
+  },
+  buttonConfirmText: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "#fff"
+  },
+  buttonConfirmDisabled: {
+    backgroundColor: "#cbd5e1",
+    opacity: 0.6
+  },
+  datePickerButton: {
+    backgroundColor: "#f1f5f9",
+    borderWidth: 1,
+    borderColor: "#cbd5e1",
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    marginBottom: 12
+  },
+  datePickerButtonText: {
+    fontSize: 14,
+    color: "#4f46e5",
+    fontWeight: "600"
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: "#e2e8f0",
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    marginBottom: 12,
+    fontSize: 14,
+    color: "#1f2937",
+    backgroundColor: "#f8fafc"
+  },
+  textInputMultiline: {
+    height: 100,
+    textAlignVertical: "top"
+  },
+  bookingSelector: {
+    marginBottom: 16,
+    marginHorizontal: -20,
+    paddingHorizontal: 20
+  },
+  bookingSelectItem: {
+    borderWidth: 1,
+    borderColor: "#e2e8f0",
+    borderRadius: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    marginRight: 8,
+    backgroundColor: "#f8fafc"
+  },
+  bookingSelectItemActive: {
+    backgroundColor: "#4f46e5",
+    borderColor: "#4f46e5"
+  },
+  bookingSelectText: {
+    color: "#475569",
+    fontSize: 13,
+    fontWeight: "600"
+  },
+  bookingSelectTextActive: {
+    color: "#fff"
+  },
+  categoryBadge: {
+    borderWidth: 1,
+    borderColor: "#cbd5e1",
+    borderRadius: 10,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    marginRight: 8,
+    marginBottom: 12
+  },
+  categoryBadgeActive: {
+    backgroundColor: "#e0e7ff",
+    borderColor: "#4f46e5"
+  },
+  categoryBadgeText: {
+    fontSize: 12,
+    color: "#475569",
+    fontWeight: "600"
+  },
+  categoryBadgeTextActive: {
+    color: "#4f46e5"
+  },
+  priorityBadge: {
+    borderWidth: 1,
+    borderColor: "#cbd5e1",
+    borderRadius: 10,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    marginRight: 8,
+    marginBottom: 12
+  },
+  priorityBadgeActive: {
+    backgroundColor: "#fef2f2",
+    borderColor: "#dc2626"
+  },
+  priorityBadgeText: {
+    fontSize: 12,
+    color: "#475569",
+    fontWeight: "600"
+  },
+  priorityBadgeTextActive: {
+    color: "#dc2626"
+  },
+  uploadButton: {
+    backgroundColor: "#f1f5f9",
+    borderWidth: 2,
+    borderColor: "#cbd5e1",
+    borderStyle: "dashed",
+    borderRadius: 12,
+    paddingVertical: 14,
+    alignItems: "center",
+    marginBottom: 12
+  },
+  uploadButtonText: {
+    fontSize: 14,
+    color: "#4f46e5",
+    fontWeight: "600"
+  },
+  complaintCard: {
+    backgroundColor: "#f8fafc",
+    padding: 14,
+    borderRadius: 14,
+    marginBottom: 12,
+    borderLeftWidth: 4,
+    borderLeftColor: "#ef4444",
+    borderWidth: 1,
+    borderColor: "#e2e8f0"
+  },
+  complaintHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    marginBottom: 8
+  },
+  complaintTitle: {
+    fontSize: 15,
+    fontWeight: "700",
+    color: "#1f2937",
+    marginBottom: 4
+  },
+  complaintMeta: {
+    fontSize: 12,
+    color: "#64748b",
+    marginBottom: 8
+  },
+  complaintThumb: {
+    width: "100%",
+    height: 120,
+    borderRadius: 8,
+    marginTop: 8
+  },
+  statusBadge: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 8
+  },
+  statusBadgeText: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: "#fff"
+  },
+  complaintDetails: {
+    paddingBottom: 40
+  },
+  detailRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 16,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e2e8f0"
+  },
+  detailValue: {
+    fontSize: 14,
+    color: "#1f2937",
+    fontWeight: "600"
+  },
+  descriptionText: {
+    fontSize: 14,
+    color: "#475569",
+    lineHeight: 20,
+    marginBottom: 16
+  },
+  fullImage: {
+    width: "100%",
+    height: 240,
+    borderRadius: 12,
+    marginVertical: 12
+  },
+  responseBox: {
+    backgroundColor: "#f0fdf4",
+    borderLeftWidth: 4,
+    borderLeftColor: "#10b981",
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 16
+  },
+  responseText: {
+    fontSize: 13,
+    color: "#1f2937",
+    lineHeight: 18,
+    marginBottom: 8
+  },
+  responseMeta: {
+    fontSize: 11,
+    color: "#64748b",
+    fontStyle: "italic"
+  },
+  closeModalButton: {
+    alignSelf: "flex-end",
+    marginBottom: 12
+  },
+  closeButton2: {
+    backgroundColor: "#e2e8f0",
+    paddingVertical: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 16
+  },
+  buttonText: {
+    fontSize: 14,
+    fontWeight: "600",
+    color: "#1f2937"
+  },
+  emptyText: {
+    textAlign: "center",
+    color: "#64748b",
+    fontSize: 14,
+    marginVertical: 20
+  },
+  noBookingsContainer: {
+    backgroundColor: "#fef3c7",
+    borderRadius: 12,
+    padding: 16,
+    borderLeftWidth: 4,
+    borderLeftColor: "#f59e0b",
+    marginBottom: 16
+  },
+  noBookingsText: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "#92400e",
+    marginBottom: 8
+  },
+  noBookingsSubtext: {
+    fontSize: 13,
+    color: "#b45309",
+    lineHeight: 18
   }
 });

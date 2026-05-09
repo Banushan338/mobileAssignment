@@ -8,6 +8,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const roomRoutes = require("./routes/roomRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
+const complaintRoutes = require("./routes/complaintRoutes");
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.get("/", (_req, res) => res.json({ message: "WMT API is running" }));
 app.use("/api/auth", authRoutes);
 app.use("/api/rooms", roomRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/complaints", complaintRoutes);
 
 app.use((err, _req, res, _next) => {
   if (err.message?.includes("Only image files")) {

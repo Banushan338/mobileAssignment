@@ -15,10 +15,11 @@ import * as ImagePicker from "expo-image-picker";
 import { apiRequest } from "../api/api";
 import AppButton from "../components/AppButton";
 import FormInput from "../components/FormInput";
+import DateRangeCalendar from "../components/DateRangeCalendar";
 import { ROOM_ACCENT_COLORS } from "../theme/theme";
 import { styles } from "../theme/screenStyles";
 
-export default function RoomListScreen({ auth, setAuth }) {
+export default function RoomListScreen({ auth, setAuth, navigation }) {
   const [rooms, setRooms] = useState([]);
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,7 @@ export default function RoomListScreen({ auth, setAuth }) {
   const [editingRoom, setEditingRoom] = useState(null);
   const [bookingStartDate, setBookingStartDate] = useState("");
   const [bookingEndDate, setBookingEndDate] = useState("");
+  const [showDateCalendar, setShowDateCalendar] = useState(false);
   const userRole = String(auth.user?.role || "").toLowerCase();
 
   const availableRoomsCount = rooms.filter((room) => room.availabilityStatus === "Available").length;
@@ -99,6 +101,11 @@ export default function RoomListScreen({ auth, setAuth }) {
     setRoomType("Single");
     setRoomImage(null);
     setEditingRoom(null);
+  };
+
+  const handleDateRangeSelected = (startDate, endDate) => {
+    setBookingStartDate(startDate);
+    setBookingEndDate(endDate);
   };
 
   const pickImage = async () => {
@@ -293,6 +300,12 @@ export default function RoomListScreen({ auth, setAuth }) {
             <View style={styles.badgePill}>
               <Text style={styles.badgeText}>{auth.user?.role.toUpperCase()}</Text>
             </View>
+            <AppButton
+              title="Complaints"
+              variant="info"
+              onPress={() => navigation.navigate("Complaints")}
+              fullWidth={false}
+            />
             <AppButton title="Logout" variant="secondary" onPress={logout} fullWidth={false} />
           </View>
 
@@ -327,20 +340,29 @@ export default function RoomListScreen({ auth, setAuth }) {
 
       {userRole === "student" && (
         <View style={styles.card}>
-          <Text style={styles.detailLabel}>Booking start date (YYYY-MM-DD)</Text>
-          <FormInput
-            placeholder="e.g. 2026-06-01"
-            value={bookingStartDate}
-            onChangeText={setBookingStartDate}
-            autoCapitalize="none"
-          />
-          <Text style={styles.detailLabel}>Booking end date (YYYY-MM-DD)</Text>
-          <FormInput
-            placeholder="e.g. 2026-12-01"
-            value={bookingEndDate}
-            onChangeText={setBookingEndDate}
-            autoCapitalize="none"
-          />
+          <Text style={styles.detailLabel}>Select Booking Dates</Text>
+          <Pressable
+            style={styles.datePickerButton}
+            onPress={() => setShowDateCalendar(true)}
+          >
+            <Text style={styles.datePickerButtonText}>
+              📅 {bookingStartDate && bookingEndDate
+                ? `${bookingStartDate} to ${bookingEndDate}`
+                : "Choose dates..."}
+            </Text>
+          </Pressable>
+          {bookingStartDate && bookingEndDate && (
+            <View style={styles.dateDisplayContainer}>
+              <View style={styles.dateDisplay}>
+                <Text style={styles.dateLabel}>From</Text>
+                <Text style={styles.dateValue}>{bookingStartDate}</Text>
+              </View>
+              <View style={styles.dateDisplay}>
+                <Text style={styles.dateLabel}>To</Text>
+                <Text style={styles.dateValue}>{bookingEndDate}</Text>
+              </View>
+            </View>
+          )}
         </View>
       )}
 
@@ -488,6 +510,13 @@ export default function RoomListScreen({ auth, setAuth }) {
         </View>
       </Modal>
 
+      <DateRangeCalendar
+        visible={showDateCalendar}
+        onClose={() => setShowDateCalendar(false)}
+        onDateRangeSelected={handleDateRangeSelected}
+        startDate={bookingStartDate}
+        endDate={bookingEndDate}
+      />
     </SafeAreaView>
   );
 }
