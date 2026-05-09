@@ -1,34 +1,3 @@
-SE2020 Individual Project Submission
-======================================
-
-01). GitHub Repository Link
-----------------------------
-GitHub Repository: https://github.com/your-username/your-repo-name
-
-02). Team Details
-------------------
-Group Number: XX
-
-Member 1: ITxxxxxxx – Your Full Name – SE2020 (Software Engineering)
-
-03). Deployment Details
-------------------------
-Backend URL: https://your-api-link
-
-======================================
-Project Title : Mobile Hostel Room Booking and Management System
-Submission    : Individual Project
-Module        : SE2020
-======================================
-
-
-
-
-
-
-
-
-
 
 # WMT Individual Project - Hostel Management Mobile App
 
